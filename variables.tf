@@ -25,8 +25,10 @@ variable "vpc_subnets" {
         subnet_name       = string,
         subnet_cidr       = string,
         subnet_gateway_ip = string,
-        subnet_availability_zone = string
-
+        subnet_availability_zone = string,
+        subnet_dhcp_enable = optional(bool),
+        subnet_primary_dns = optional(string),
+        subnet_secondary_dns = optional(string) 
     }))
     description = "create the subnets of the vpc"
     default = []
